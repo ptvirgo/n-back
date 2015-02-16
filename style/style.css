@@ -1,0 +1,16 @@
+body {
+  color: #222;
+  font-family: "Liberation-Sans", sans-serif;
+  font-size: medium;
+  text-align: center;
+}
+
+h1, h2, h3, h4, h5, h6, p
+{
+  margin: 0 0 .5em 0;
+}
+
+svg
+{
+  margin: 0 0 2em 0;
+}

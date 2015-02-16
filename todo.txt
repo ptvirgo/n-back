@@ -1,0 +1,4 @@
+# To do items
+
+- Write user instructions
+- Display the user's score after each completed session
