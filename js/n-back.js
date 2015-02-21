@@ -286,6 +286,7 @@ Effect
 
   this.reset = function() {
 
+    print( "..." );
     indicators[ "position" ].indicate( "inactive" );
     indicators[ "sound" ].indicate( "inactive" );
 
@@ -614,15 +615,18 @@ values for "n" as appropriate to the tallied results.
     {
       playerStats.n++
       playerStats.warns = 0;
+      print( "Well played! N-Back increased." );
     }
     else if ( score < 50 && playerStats.warns < 2 )
     {
       playerStats.warns++;
+      print( "Keep at it.  Not adjusting yet." );
     }
     else if ( score < 50 && playerStats.n > 1 )
     {
       playerStats.n--;
       playerStats.warns = 0;
+      print( "Time to back N-Back down a bit." );
     }
 
     board.showPlayerStats();
@@ -715,12 +719,24 @@ sessions at once.
 
 */
 
-function startNewSession(board) {
+function startNewSession( board ) {
   var session = new Session(playerStats.n, board);
   $("#sessionControl").off("click");
   $("#sessionControl").click( function() { session.end( true ); delete( session ); });
   $("#sessionControl").val("Quit Session");
   session.start();
+}
+
+/* print( message )
+
+Parameter: A text string to be displayed to the user.
+Effect: Displays the text on the #stdout HTML element.
+
+*/
+
+function print( message )
+{
+  $("#stdout").text( message );
 }
 
 window.onload = function() {
