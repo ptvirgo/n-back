@@ -286,7 +286,7 @@ Effect
 
   this.reset = function() {
 
-    print( "..." );
+    print( "" );
     indicators[ "position" ].indicate( "inactive" );
     indicators[ "sound" ].indicate( "inactive" );
 
