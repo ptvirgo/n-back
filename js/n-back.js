@@ -615,18 +615,21 @@ values for "n" as appropriate to the tallied results.
     {
       playerStats.n++
       playerStats.warns = 0;
-      print( "Well played! N-Back increased." );
+      print( correctTotal + " of " + overallTotal + " correct. " +
+        "Well played! N-Back increased." );
     }
     else if ( score < 50 && playerStats.warns < 2 )
     {
       playerStats.warns++;
-      print( "Keep at it.  Not adjusting yet." );
+      print( correctTotal + " of " + overallTotal + " correct. " +
+        "Keep at it.  Not adjusting yet." );
     }
     else if ( score < 50 && playerStats.n > 1 )
     {
       playerStats.n--;
       playerStats.warns = 0;
-      print( "Time to back N-Back down a bit." );
+      print( correctTotal + " of " + overallTotal + " correct. " +
+        "Time to back N-Back down a bit." );
     }
 
     board.showPlayerStats();
